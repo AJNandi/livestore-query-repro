@@ -13,8 +13,6 @@ This repo includes the following packages/apps:
 
 ### To run the app
 
-First install node mods. Then build the wasm lib for the spreadsheet. Then start vite.
-
 ```
 npm i
 npm run web
@@ -44,7 +42,7 @@ Column workspaceId has no default value and is not nullable
 Creating a _new folder_ almost always throws an error like this:
 
 ```
-LiveStore Error: Attempted to compute destroyed thunk (node-78): rowQuery:query:file:sdWJWi67iPgLRUT0JuIMl:results
+LiveStore Error: Attempted to compute destroyed thunk (node-78): rowQuery:query:file:sdWJWi6sss7iPgLRUT0JuIMl:results
 ```
 
 
