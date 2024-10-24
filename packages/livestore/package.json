@@ -1,0 +1,25 @@
+{
+  "name": "@repo/livestore",
+  "version": "0.3.16",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {},
+  "dependencies": {
+    "@effect/schema": "0.72.2",
+    "@livestore/devtools-react": "0.0.57",
+    "@livestore/livestore": "0.0.57",
+    "@livestore/wa-sqlite": "1.0.1-dev.29",
+    "@livestore/web": "0.0.57"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "instant-cli": "^0.12.23",
+    "typescript": "^5.2.2"
+  }
+}
