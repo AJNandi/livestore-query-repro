@@ -14,7 +14,7 @@ const file = DbSchema.table(
     created: DbSchema.integer({ default: { sql: `(strftime('%s','now'))` } }),
     modified: DbSchema.integer({ default: { sql: `(strftime('%s','now'))` } }),
     deleted: DbSchema.integer({ nullable: true }),
-    folderId: DbSchema.text({}),
+    folderId: DbSchema.text(),
     icon: DbSchema.text({ default: Icons.TableCellsIcon }),
     color: DbSchema.text({ default: IconColors.Slate }),
   },

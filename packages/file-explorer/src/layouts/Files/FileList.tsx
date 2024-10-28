@@ -48,7 +48,7 @@ const VirtualRow = ({ data, index, style }: { data: readonly FileOrFolderWithTyp
 const VirtualFolderRow = memo(({ folderId, style }: { folderId: string; style: CSSProperties }) => {
   const navigate = useNavigate()
 
-  const [folder] = useRow(tables.folder, folderId)
+  const [folder] = useRow(tables.folder, folderId, { defaultValues: { workspaceId: "dummy_ID" } })
 
   return (
     <div
@@ -70,7 +70,7 @@ const VirtualFolderRow = memo(({ folderId, style }: { folderId: string; style: C
 }, ReactWindow.areEqual)
 
 const VirtualFileRow = memo(({ fileId, style }: { fileId: string; style: CSSProperties }) => {
-  const [file] = useRow(tables.file, fileId)
+  const [file] = useRow(tables.file, fileId, { defaultValues: { workspaceId: "dummy_ID", folderId: "dummy_ID" } })
   const navigate = useNavigate()
 
   return (

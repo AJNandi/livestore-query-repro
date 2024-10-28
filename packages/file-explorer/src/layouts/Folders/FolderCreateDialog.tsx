@@ -12,13 +12,13 @@ import { nanoid } from "nanoid"
 export default function FolderCreateDialog({ parentFolderId }: { parentFolderId: string }) {
   const { store } = useStore()
   const [clientState] = useClientState()
-  
+
   const [isDialogOpen, setDialogOpen] = useState(false)
-  
+
   const [folderName, setFolderName] = useState("Untitled")
-  
+
   const createFolder = () => {
-    store.mutate(mutations.createFolderWithMembership({
+    const newFolder = {
       id: nanoid(),
       membershipId: nanoid(),
       userId: clientState.activeUserId!,
@@ -27,7 +27,8 @@ export default function FolderCreateDialog({ parentFolderId }: { parentFolderId:
       name: folderName,
       created: Date.now(),
       modified: Date.now(),
-    }))
+    }
+    store.mutate(mutations.createFolderWithMembership(newFolder))
     setDialogOpen(false)
     setFolderName("Untitled")
   }

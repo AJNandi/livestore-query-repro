@@ -14,7 +14,8 @@ function NestedFolderItem({ folderId }: { folderId: string }) {
   const matchRoute = useMatchRoute()
   const match = !!matchRoute({ to: `/files/${folderId}` })
 
-  const [folder] = useRow(tables.folder, folderId)
+  // const [clientState] = useClientState()
+  const [folder] = useRow(tables.folder, folderId, { defaultValues: { workspaceId: "dummy_id" } })
 
   return (
     <div>
@@ -38,7 +39,7 @@ function SidebarItem({ folderId }: { folderId: string }) {
   const matchRoute = useMatchRoute()
   const match = !!matchRoute({ to: `/files/${folderId}` })
 
-  const [folder] = useRow(tables.folder, folderId)
+  const [folder] = useRow(tables.folder, folderId, { defaultValues: { workspaceId: "dummy_ID" } })
 
   const folderIdsInFolder = useTemporaryQuery(
     () =>

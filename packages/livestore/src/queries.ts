@@ -59,3 +59,21 @@ export const userFavorites$ = querySQL(
     label: "userFavorites",
   }
 )
+
+export const useFoldersInFolder = (folderId: string) =>
+  useTemporaryQuery(
+    () =>
+      querySQL(() => sql`SELECT id FROM folder WHERE parentFolderId = '${folderId}' ORDER BY name desc`, {
+        schema: Schema.Array(Schema.Struct({ id: Schema.String }).pipe(Schema.pluck("id"))),
+      }),
+    [folderId]
+  )
+
+export const useFilesInFolder = (folderId: string) =>
+  useTemporaryQuery(
+    () =>
+      querySQL(() => sql`SELECT id FROM file WHERE folderId = '${folderId}' ORDER BY name desc`, {
+        schema: Schema.Array(Schema.Struct({ id: Schema.String }).pipe(Schema.pluck("id"))),
+      }),
+    [folderId]
+  )

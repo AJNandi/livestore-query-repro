@@ -9,8 +9,8 @@ export function SignupComponent({ login }: { login: () => void }) {
   const { store } = useStore()
   const [, setClientState] = useClientState()
 
-  const [email, setEmail] = useState("")
-  const [name, setName] = useState("")
+  const [email, setEmail] = useState("person@email.com")
+  const [name, setName] = useState("Eric B. Sheets")
 
   const validateEmail = (email: string) => {
     try {
